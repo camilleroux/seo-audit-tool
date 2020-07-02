@@ -24,7 +24,7 @@ Apify.main(async () => {
     const crawler = new Apify.PuppeteerCrawler({
         requestQueue,
 
-        launchPuppeteerOptions: { useApifyProxy: true },
+        launchPuppeteerOptions: { useApifyProxy: false },
         gotoFunction: ({ request, page }) => page.goto(request.url, { waitUntil: 'networkidle2' }),
 
         handlePageFunction: async ({ request, page }) => {
